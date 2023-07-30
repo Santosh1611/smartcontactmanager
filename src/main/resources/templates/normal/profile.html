@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{normal/base::layout(~{::section})}">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+</head>
+
+<body>
+	<section class="">
+		<div class="container text-center">
+			<div class="card">
+				<div class="card-body">
+					<img src="" class="" style="height: 200px;width: 200px;" th:src="@{'/img/'+${user.imageUrl}}">
+					<h1 th:text="${user.name}"></h1>
+					<table class="table ">
+						<thead>
+							<tr>
+								<th scope="col">#ID</th>
+								<th scope="col">SCM2020<span th:text="${user.id}"></span></th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">Email</th>
+								<td><span th:text="${user.email}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Role</th>
+								<td><span th:text="${user.role}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">Account Active</th>
+								<td><span th:text="${user.enabled}"></span></td>
+							</tr>
+							<tr>
+								<th scope="row">About</th>
+								<td><span th:text="${user.about}"></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			$(document).ready(() => {
+				
+				$("#profile").addClass("active1");
+			});
+		</script>
+	</section>
+</body>
+
+</html>
